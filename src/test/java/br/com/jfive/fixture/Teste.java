@@ -5,17 +5,12 @@ import br.com.jfive.model.Endereco;
 import br.com.jfive.model.Telefone;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
+import junit.framework.Assert;
 import org.junit.Test;
 
 import java.util.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * User: rodrigoalmeida
- * Date: 23/05/13
- * Time: 20:46
- * To change this template use File | Settings | File Templates.
- */
+
 public class Teste {
 
 
@@ -37,6 +32,13 @@ public class Teste {
         }});
 
         Cliente cli = Fixture.from(Cliente.class).gimme("geekCliente");
+
+        Assert.assertNotNull("Cliente null", cli);
+        Assert.assertNotNull("Data Cadastro null", cli.getDataCadastro());
+        Assert.assertNotNull("Data Nascimento null",cli.getDataNascimento());
+        Assert.assertNotNull("Email null",cli.getEmail());
+        Assert.assertNotNull("ID null",cli.getId());
+        Assert.assertNotNull("Nome null", cli.getNome());
 
     }
 
@@ -68,6 +70,14 @@ public class Teste {
 
         Cliente cli = Fixture.from(Cliente.class).gimme("geekCliente");
 
+        Assert.assertNotNull("Cliente null", cli);
+        Assert.assertNotNull("Data Cadastro null", cli.getDataCadastro());
+        Assert.assertNotNull("Data Nascimento null",cli.getDataNascimento());
+        Assert.assertNotNull("Email null",cli.getEmail());
+        Assert.assertNotNull("Endereço null",cli.getEndereco());
+        Assert.assertNotNull("ID null",cli.getId());
+        Assert.assertNotNull("Nome null", cli.getNome());
+
     }
 
     @Test
@@ -97,6 +107,16 @@ public class Teste {
 
         Cliente cli = Fixture.from(Cliente.class).gimme("geekCliente");
 
+        Assert.assertNotNull("Cliente null", cli);
+        Assert.assertNotNull("Data Cadastro null", cli.getDataCadastro());
+        Assert.assertNotNull("Data Nascimento null",cli.getDataNascimento());
+        Assert.assertNotNull("Email null",cli.getEmail());
+        Assert.assertNotNull("Endereço null",cli.getEndereco());
+        Assert.assertNotNull("Endereço null",cli.getEndereco().getTelefones());
+        Assert.assertTrue("Endereço null",!cli.getEndereco().getTelefones().isEmpty());
+        Assert.assertNotNull("ID null",cli.getId());
+        Assert.assertNotNull("Nome null", cli.getNome());
+
     }
 
     @Test
@@ -125,6 +145,16 @@ public class Teste {
         }});
 
         Cliente cli = Fixture.from(Cliente.class).gimme("geekCliente");
+
+        Assert.assertNotNull("Cliente null", cli);
+        Assert.assertNotNull("Data Cadastro null", cli.getDataCadastro());
+        Assert.assertNotNull("Data Nascimento null",cli.getDataNascimento());
+        Assert.assertNotNull("Email null",cli.getEmail());
+        Assert.assertNotNull("Endereço null",cli.getEndereco());
+        Assert.assertNotNull("Endereço null",cli.getEndereco().getTelefones());
+        Assert.assertTrue("Endereço null",!cli.getEndereco().getTelefones().isEmpty());
+        Assert.assertNotNull("ID null",cli.getId());
+        Assert.assertNotNull("Nome null", cli.getNome());
 
     }
 
